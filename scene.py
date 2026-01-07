@@ -49,7 +49,7 @@ class Scene:
                 if n_dot_l > 0:
                     i += light.intensity * n_dot_l / (N.magnitude() * L.magnitude())
 
-                if s != 1 and V is not None:
+                if s != -1 and V is not None:
                     R = N * 2 * N.dot(L) - L
                     r_dot_v = R.dot(V)
                     if r_dot_v > 0:

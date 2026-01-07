@@ -42,5 +42,5 @@ class Canva:
 
 Canva = Canva(600, 600)
 # Example usage:
-Canva.put_pixel(0, 0, Color(255, 0, 0))
+Canva.put_pixel(299, 299, Color(255, 0, 0))
 Canva.save("output.ppm")

@@ -10,7 +10,7 @@ class Vector:
     def __sub__(self, other) -> 'Vector':
         return Vector(self.x - other.x, self.y - other.y, self.z - other.z)
     
-    def __mul__(self, scalar: int) -> 'Vector':
+    def __mul__(self, scalar: float) -> 'Vector':
         return Vector(self.x * scalar, self.y * scalar, self.z * scalar)
     
     def dot(self, other: 'Vector') -> int:

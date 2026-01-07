@@ -3,11 +3,12 @@ from vector import Vector
 from object import Object
 
 class Sphere(Object):
-    def __init__(self, center: 'Vector', radius: float, color: 'Color'):
+    def __init__(self, center: 'Vector', radius: float, color: 'Color', specular: float = 500):
         self.center = center
         self.radius = radius
-        self.color = color        
-        
+        self.color = color
+        self.specular = specular
+
     def intersect(self, origin, direction) -> tuple[float, float]:
         """
         Calculate the intersections of a ray with the sphere.

@@ -1,5 +1,6 @@
 from color import Color
 from vector import Vector
+
 class Canva:
     def __init__(self, width: int, height: int) -> None:
         self.width: int = width
@@ -39,8 +40,3 @@ class Canva:
         vp_z: float = 1.0
         #TODO: The viewport dimensions (I assumed 1x1 here) should be parameters of the Canva class
         return Vector(vp_x, vp_y, vp_z)
-
-Canva = Canva(600, 600)
-# Example usage:
-Canva.put_pixel(299, 299, Color(255, 0, 0))
-Canva.save("output.ppm")

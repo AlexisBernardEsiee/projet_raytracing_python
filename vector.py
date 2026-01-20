@@ -42,7 +42,7 @@ class Vector:
     
     @staticmethod
     def origin() -> 'Vector':
-        return Vector(0, 0, 0)
+        return Vector(3, 1, 0)
 
     @staticmethod
     def reflect(vector, normal):

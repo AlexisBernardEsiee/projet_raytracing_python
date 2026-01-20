@@ -11,7 +11,7 @@ class Color:
         return Color(self.r + other.r, self.g + other.g, self.b + other.b)
     
     def to_tuple(self):
-        return (self.r, self.g, self.b)
+        return self.r, self.g, self.b
     
     @staticmethod
     def from_tuple(t):

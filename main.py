@@ -6,6 +6,8 @@ from scene import Scene
 from object import Object
 from scene import Scene
 from light import Light, AmbientLight, PointLight, DirectionalLight
+from camera import Camera
+from math import pi
 import time
 
 def main():
@@ -33,12 +35,16 @@ def main():
     directional_light = DirectionalLight(direction=Vector(1, 4, 4), intensity=0.2)
     scene.add_light(directional_light)
 
+    camera = Camera()
+    camera.setPosition(Vector(0, 0, -3  ))
+    camera.setRotation(Vector(0,1,0), pi/6)
+
     # Trace rays for each pixel in the canvas
     for x in range(-canvas.width // 2, canvas.width // 2):
         for y in range(-canvas.height // 2, canvas.height // 2):
             # Convert canvas coordinates to viewport coordinates
-            direction = canvas.to_viewport(x, y)
-            origin = Vector(0, 0, 0)
+            direction = camera.rotation * canvas.to_viewport(x, y)
+            origin = camera.position
 
             # Trace the ray and get the color
             color = scene.trace_ray(origin, direction, 1.0, float('inf'), recursion_depth=1)

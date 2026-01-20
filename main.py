@@ -6,25 +6,27 @@ from scene import Scene
 from object import Object
 from scene import Scene
 from light import Light, AmbientLight, PointLight, DirectionalLight
+import time
 
 def main():
     # Create a canvas
     canvas = Canva(600, 600)
+    start_time = time.time()
 
     # Create a scene
     scene = Scene()
-    scene.set_background_color(Color(255, 255, 255))
+    scene.set_background_color(Color(0, 0, 0))
 
     # Add a red sphere to the scene
-    sphere = Sphere(center=Vector(0, -1, 3), radius=1, color=Color(255, 0, 0), specular=500)
+    sphere = Sphere(position=Vector(0, -1, 3), radius=1, color=Color(255, 0, 0), specular=500)
     scene.add_object(sphere)
-    sphere2 = Sphere(center=Vector(2, 0, 4), radius=1, color=Color(0, 255, 0), specular=500)
+    sphere2 = Sphere(position=Vector(2, 0, 4), radius=1, color=Color(0, 255, 0), specular=500)
     scene.add_object(sphere2)
-    sphere3 = Sphere(center=Vector(-2, 0, 4), radius=1, color=Color(0, 0, 255), specular=10)
+    sphere3 = Sphere(position=Vector(-2, 0, 4), radius=1, color=Color(0, 0, 255), specular=10)
     scene.add_object(sphere3)
-
-    sphere4 = Sphere(center=Vector(0, -5001, 0), radius=5000, color=Color(255, 255, 0), specular=1000)
+    sphere4 = Sphere(position=Vector(0, -5001, 0), radius=5000, color=Color(255, 255, 0), specular=1000, reflective=0.5)
     scene.add_object(sphere4)
+
     # Add lights to the scene
     point_light = PointLight(position=Vector(2, 1, 0), intensity=0.6)
     scene.add_light(point_light)
@@ -39,11 +41,13 @@ def main():
             origin = Vector(0, 0, 0)
 
             # Trace the ray and get the color
-            color = scene.trace_ray(origin, direction, 1.0, float('inf'))
+            color = scene.trace_ray(origin, direction, 1.0, float('inf'), recursion_depth=1)
             # Put the pixel on the canvas
             canvas.put_pixel(x, y, color)
     # Save the canvas to a file
     canvas.save("scene.ppm")
+    end_time = time.time()
+    print(f"Rendering completed in {end_time - start_time} seconds.")
 
 if __name__ == "__main__":
     main()

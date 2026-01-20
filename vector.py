@@ -12,8 +12,13 @@ class Vector:
     
     def __mul__(self, scalar: float) -> 'Vector':
         return Vector(self.x * scalar, self.y * scalar, self.z * scalar)
+
+    def __truediv__(self, other):
+        if isinstance(other, float):
+            return Vector(self.x / other, self.y / other, self.z / other)
+        return self
     
-    def dot(self, other: 'Vector') -> int:
+    def dot(self, other: 'Vector') -> float:
         return self.x * other.x + self.y * other.y + self.z * other.z
     
     def cross(self, other: 'Vector') -> 'Vector':
@@ -38,6 +43,10 @@ class Vector:
     @staticmethod
     def origin() -> 'Vector':
         return Vector(0, 0, 0)
+
+    @staticmethod
+    def reflect(vector, normal):
+        return normal * 2 * vector.dot(normal) - vector
     
     def from_to(v1: 'Vector', v2: 'Vector') -> 'Vector':
         return v2 - v1

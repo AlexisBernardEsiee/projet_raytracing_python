@@ -10,7 +10,7 @@ class Canva:
     def put_pixel(self, x: int, y: int, color: Color) -> None:
         """
         Put the pixel at (x, y) with the given color.
-        The origin (0,0) is at the center of the canvas.
+        The origin (0,0) is at the position of the canvas.
         """
         screen_x: int = self.width // 2 + x
         screen_y: int = self.height // 2 - y - 1
@@ -33,7 +33,7 @@ class Canva:
     
     def to_viewport(self, x: int, y: int) -> Vector:
         """ Convert canvas coordinates to viewport coordinates.
-         The origin (0,0) is at the center of the canvas.
+         The origin (0,0) is at the position of the canvas.
         """
         vp_x: float = x * (1 / self.width)
         vp_y: float = y * (1 / self.height)

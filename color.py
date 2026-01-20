@@ -6,6 +6,9 @@ class Color:
 
     def __mul__(self, scalar: float) -> 'Color':
         return Color(int(self.r * scalar), int(self.g * scalar), int(self.b * scalar))
+
+    def __add__(self, other):
+        return Color(self.r + other.r, self.g + other.g, self.b + other.b)
     
     def to_tuple(self):
         return (self.r, self.g, self.b)

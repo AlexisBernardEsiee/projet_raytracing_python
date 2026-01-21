@@ -1,0 +1,217 @@
+{
+  "canva": {
+    "width": 800,
+    "height": 800
+  },
+  "scene": {
+    "background": {
+      "r": 5,
+      "g": 5,
+      "b": 5
+    },
+    "objects": [
+      {
+        "type": "sphere",
+        "position": [
+          0,
+          0,
+          6
+        ],
+        "radius": 1.5,
+        "color": [
+          10,
+          10,
+          10
+        ],
+        "specular": 2000,
+        "reflective": 0.8
+      },
+      {
+        "type": "sphere",
+        "position": [
+          2,
+          0,
+          6
+        ],
+        "radius": 0.3,
+        "color": [
+          255,
+          0,
+          50
+        ],
+        "specular": 500,
+        "reflective": 0.1
+      },
+      {
+        "type": "sphere",
+        "position": [
+          -2,
+          0,
+          6
+        ],
+        "radius": 0.3,
+        "color": [
+          255,
+          0,
+          50
+        ],
+        "specular": 500,
+        "reflective": 0.1
+      },
+      {
+        "type": "sphere",
+        "position": [
+          0,
+          2,
+          6
+        ],
+        "radius": 0.3,
+        "color": [
+          50,
+          255,
+          0
+        ],
+        "specular": 500,
+        "reflective": 0.1
+      },
+      {
+        "type": "sphere",
+        "position": [
+          0,
+          -2,
+          6
+        ],
+        "radius": 0.3,
+        "color": [
+          50,
+          255,
+          0
+        ],
+        "specular": 500,
+        "reflective": 0.1
+      },
+      {
+        "type": "sphere",
+        "position": [
+          1.4,
+          1.4,
+          6
+        ],
+        "radius": 0.3,
+        "color": [
+          0,
+          100,
+          255
+        ],
+        "specular": 500,
+        "reflective": 0.1
+      },
+      {
+        "type": "sphere",
+        "position": [
+          -1.4,
+          -1.4,
+          6
+        ],
+        "radius": 0.3,
+        "color": [
+          0,
+          100,
+          255
+        ],
+        "specular": 500,
+        "reflective": 0.1
+      },
+      {
+        "type": "sphere",
+        "position": [
+          -1.4,
+          1.4,
+          6
+        ],
+        "radius": 0.3,
+        "color": [
+          255,
+          255,
+          0
+        ],
+        "specular": 500,
+        "reflective": 0.1
+      },
+      {
+        "type": "sphere",
+        "position": [
+          1.4,
+          -1.4,
+          6
+        ],
+        "radius": 0.3,
+        "color": [
+          255,
+          255,
+          0
+        ],
+        "specular": 500,
+        "reflective": 0.1
+      },
+      {
+        "type": "sphere",
+        "position": [
+          0,
+          0,
+          10
+        ],
+        "radius": 3,
+        "color": [
+          30,
+          30,
+          30
+        ],
+        "specular": 0,
+        "reflective": 0.2
+      }
+    ],
+    "lights": [
+      {
+        "type": "point",
+        "position": [
+          3,
+          3,
+          2
+        ],
+        "intensity": 0.8
+      },
+      {
+        "type": "point",
+        "position": [
+          -3,
+          -3,
+          4
+        ],
+        "intensity": 0.5
+      },
+      {
+        "type": "directional",
+        "direction": [
+          0,
+          0,
+          1
+        ],
+        "intensity": 0.2
+      }
+    ],
+    "camera": {
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation_axis": [
+        0,
+        0,
+        1
+      ],
+      "rotation_angle": 0
+    }
+  }
+}

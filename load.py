@@ -12,7 +12,7 @@ import json
 import sys
 import time
 
-file = sys.argv[1]
+file = "scenes/" + sys.argv[1] + ".json"
 CANVA = "canva"
 SCENE = "scene"
 SCENE_BACKGROUND= "background"
@@ -63,9 +63,8 @@ def load():
             origin = camera.position
             color = scene.trace_ray(origin, direction, 1.0, float('inf'), recursion_depth=3)
             canva.put_pixel(x, y, color)
-    canva.save("scene.ppm")
+    canva.save(f"{sys.argv[1]}.ppm")
     end_time = time.time()
     print(f"Rendering completed in {end_time - start_time} seconds.")
-
 
 load()
